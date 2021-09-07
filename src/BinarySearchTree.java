@@ -1,19 +1,20 @@
-
-class Node{
-    int data;
-    Node left;
-    Node right;
-
-    public Node(int data) {
+//Create Class Node
+    class Node{
+        int data;
+        Node left;
+        Node right;
+        //Constructor
+        public Node(int data) {
         this.data = data;
+        }
     }
-}
 public class BinarySearchTree {
-    Node root;
-    public void add (int data){
-        root = addToNode(root,data);
+        Node root;
+        //Method to add Node to BST
+         public void add (int data){
+         root = addToNode(root,data);
     }
-
+    //Method addNode
     private Node addToNode(Node root, int data) {
         if (root == null){
             root = new Node(data);
@@ -26,7 +27,7 @@ public class BinarySearchTree {
         }
         return root;
     }
-
+    //Method inOrder to Traversal the Nodes in BST
     public void inOrder(){
         if (root != null){
             System.out.print("InOrder Traversal: ");
@@ -44,10 +45,13 @@ public class BinarySearchTree {
     }
 
     public static void main(String[] args) {
+        System.out.println("Welcome to Binary Search Tree");
+        //Object
         BinarySearchTree tree = new BinarySearchTree();
-        tree.add(20);
+        //Adding nodes to BST
+        tree.add(56);
         tree.add(30);
-        tree.add(10);
+        tree.add(70);
         tree.inOrder();
     }
 }
